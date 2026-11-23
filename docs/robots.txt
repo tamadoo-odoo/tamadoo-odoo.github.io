@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tamadoo-odoo.github.io/sitemap.xml

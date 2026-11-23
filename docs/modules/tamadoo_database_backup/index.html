@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Database Backup for Odoo 16–20 | Tamadoo</title>
+<meta name="description" content="Scheduled database backups with odoo.sh-style retention and pluggable storage backends. Productivity &amp; Tools app for Odoo 16–20, free on the Odoo Apps Store.">
+<link rel="canonical" href="https://tamadoo-odoo.github.io/modules/tamadoo_database_backup/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tamadoo Odoo Apps">
+<meta property="og:title" content="Database Backup for Odoo 16–20 | Tamadoo">
+<meta property="og:description" content="Scheduled database backups with odoo.sh-style retention and pluggable storage backends. Productivity &amp; Tools app for Odoo 16–20, free on the Odoo Apps Store.">
+<meta property="og:url" content="https://tamadoo-odoo.github.io/modules/tamadoo_database_backup/">
+<meta property="og:image" content="https://tamadoo-odoo.github.io/assets/tamadoo_database_backup/banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#714b67">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Database Backup", "description": "Scheduled database backups with odoo.sh-style retention and pluggable storage backends", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Productivity & Tools", "operatingSystem": "Odoo 16.0, 17.0, 18.0, 19.0, 20.0", "softwareVersion": "20.0.1.0.1", "url": "https://tamadoo-odoo.github.io/modules/tamadoo_database_backup/", "image": "https://tamadoo-odoo.github.io/assets/tamadoo_database_backup/banner.jpg", "author": {"@type": "Organization", "name": "Tamadoo", "email": "tama.odoo@gmail.com"}, "offers": {"@type": "Offer", "price": "0.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://apps.odoo.com/apps/modules/19.0/tamadoo_database_backup"}}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar"><a class="brand" href="../../"><span class="logo" aria-hidden="true">T</span>Tamadoo <span class="brand-sub">Odoo Apps</span></a><nav aria-label="Categories"><details class="menu"><summary>Categories</summary><ul><li><a href="../../category/pos/">Point of Sale</a></li><li><a href="../../category/sales/">Sales, CRM &amp; Purchase</a></li><li><a href="../../category/inventory/">Inventory &amp; Manufacturing</a></li><li><a href="../../category/accounting/">Accounting &amp; Finance</a></li><li><a href="../../category/hr/">HR &amp; Payroll</a></li><li><a href="../../category/website/">Website &amp; eCommerce</a></li><li><a href="../../category/tools/">Productivity &amp; Tools</a></li></ul></details></nav></div></header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> &rsaquo; <a href="../../category/tools/">Productivity &amp; Tools</a> &rsaquo; <span>Database Backup</span></nav><article class="module"><header class="module-head"><div class="module-intro"><h1>Database Backup</h1><p class="lead">Scheduled database backups with odoo.sh-style retention and pluggable storage backends</p><dl class="facts"><div><dt>Price</dt><dd class="price-big">Free</dd></div><div><dt>Odoo versions</dt><dd><ul class="chips"><li>16.0</li><li>17.0</li><li>18.0</li><li>19.0</li><li>20.0</li></ul></dd></div><div class="wide"><dt>Technical name</dt><dd><code>tamadoo_database_backup</code></dd></div><div><dt>License</dt><dd>LGPL-3</dd></div></dl><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/19.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 19.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/18.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 18.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/17.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 17.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/16.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 16.0</small></a></div><p class="note">Odoo 20.0: not listed on the store yet. Ask at <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p></div><img class="banner" src="../../assets/tamadoo_database_backup/banner.jpg" alt="Database Backup banner" width="560" height="280"></header><section class="desc" aria-label="Module description"><p class="note">Text and screenshots below are from the Odoo 20.0 version of this module.</p><div>
+  <div>
+    
+    <p>
+      Scheduled backups with odoo.sh-style retention · pluggable storage.
+    </p>
+    
+  </div>
+
+  <div>
+    <h2>What it does</h2>
+    <p>
+      A lightweight engine for automatic database backups. Schedule them, keep a
+      sensible history, and get notified when one fails. <strong>Where</strong> the
+      backups are stored is a separate, small add-on — install only the
+      destinations you use.
+    </p>
+    <ul>
+      <li><strong>Daily / weekly / monthly</strong> schedule.</li>
+      <li><strong>zip</strong> (database + filestore) or <strong>dump</strong> (database only).</li>
+      <li><strong>odoo.sh-style retention</strong>: keep the last N days, plus the latest of each of the last M months.</li>
+      <li><strong>E-mail alert</strong> on failure.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Pick your storage</h2>
+    <p>This is the engine. Add one or more storage backends:</p>
+    <ul>
+      <li><strong>Local Folder</strong> — <code>tamadoo_db_backup_local</code></li>
+      <li><strong>Google Drive</strong> — <code>tamadoo_db_backup_gdrive</code></li>
+    </ul>
+    <p>
+      Build your own destination by adding one Selection value and implementing
+      <code>_store_&lt;backend&gt;</code> / <code>_retain_&lt;backend&gt;</code>.
+    </p>
+  </div>
+
+  <div>
+    <h2>How it looks</h2>
+    <h3>Your scheduled backups at a glance</h3>
+    <img src="../../assets/tamadoo_database_backup/01_backup_list.webp" alt="Backup list" width="1600" height="1000" loading="lazy" decoding="async">
+    <h3>Configure schedule &amp; retention</h3>
+    <img src="../../assets/tamadoo_database_backup/02_backup_config.webp" alt="Backup config" width="1600" height="1000" loading="lazy" decoding="async">
+  </div>
+
+  <div>
+    <h2>Step by step</h2>
+    <h3>1. Install the engine and a storage add-on</h3>
+    <p>Install this module together with at least one destination: <strong>Tamadoo Database Backup: Local Folder</strong> or <strong>Tamadoo Database Backup: Google Drive</strong>.</p>
+    <h3>2. Create a backup</h3>
+    <p>As an administrator, open <strong>Backups → Database Backups</strong> and click <strong>New</strong>. Give it a name and check the <strong>Database</strong>.</p>
+    <h3>3. Choose what, where and how often</h3>
+    <p>Pick the <strong>Format</strong> (zip with filestore, or dump), the destination in <strong>Store To</strong> and the <strong>Frequency</strong>. Set <strong>Keep Daily (days)</strong> and <strong>Keep Monthly (months)</strong>, and an e-mail address in <strong>Notify On Failure</strong> if you want an alert.</p>
+    <img src="../../assets/tamadoo_database_backup/02_backup_config-2.webp" alt="Backup config" width="1600" height="1000" loading="lazy" decoding="async">
+    <h3>4. Run it</h3>
+    <p>Click <strong>Back Up Now</strong> to test it. After that the daily scheduler runs every backup that is due.</p>
+    <h3>5. Check the result</h3>
+    <p>The list shows <strong>Last Backup</strong> and <strong>Last Status</strong> per line. The form lists the stored files under <strong>Existing Backups</strong>.</p>
+    <img src="../../assets/tamadoo_database_backup/01_backup_list-2.webp" alt="Backup list" width="1600" height="1000" loading="lazy" decoding="async">
+  </div>
+
+  <div>
+    <h2>Requirements</h2>
+    <ul>
+      <li>Odoo 20 — Community or Enterprise.</li>
+      <li><code>pg_dump</code> on the server (standard with PostgreSQL).</li>
+    </ul>
+  </div>
+
+  <div>
+    <p>Tamadoo · tama.odoo@gmail.com</p>
+  </div>
+</div></section><section class="cta"><h2>Get Database Backup</h2><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/19.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 19.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/18.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 18.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/17.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 17.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/16.0/tamadoo_database_backup" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 16.0</small></a></div><p class="note">Odoo 20.0: not listed on the store yet. Ask at <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p><p>Questions before buying? Write to <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p></section></article><section class="related"><h2>More Productivity &amp; Tools apps</h2><ul class="cards"><li class="card" data-cat="tools" data-free="0" data-q="approval engine multi-level approval workflow on any model, without code: conditions, approval levels, field locking, signatures. tamadoo_approval_engine productivity &amp; tools"><a href="../../modules/tamadoo_approval_engine/"><img src="../../assets/tamadoo_approval_engine/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Approval Engine</span><span class="card-sum">Multi-level approval workflow on any model, without code: conditions, approval levels, field locking, signatures.</span><span class="card-meta"><span class="price ">$69</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="tools" data-free="1" data-q="database backup: google drive store scheduled database backups in your google drive (oauth) tamadoo_db_backup_gdrive productivity &amp; tools"><a href="../../modules/tamadoo_db_backup_gdrive/"><img src="../../assets/tamadoo_db_backup_gdrive/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Database Backup: Google Drive</span><span class="card-sum">Store scheduled database backups in your Google Drive (OAuth)</span><span class="card-meta"><span class="price free">Free</span><span class="vers">Odoo 16–20</span></span></span></a></li><li class="card" data-cat="tools" data-free="1" data-q="database backup: local folder store scheduled database backups in a local server folder tamadoo_db_backup_local productivity &amp; tools"><a href="../../modules/tamadoo_db_backup_local/"><img src="../../assets/tamadoo_db_backup_local/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Database Backup: Local Folder</span><span class="card-sum">Store scheduled database backups in a local server folder</span><span class="card-meta"><span class="price free">Free</span><span class="vers">Odoo 16–20</span></span></span></a></li><li class="card" data-cat="tools" data-free="0" data-q="document ai (chat with your files) upload pdf/docx/txt and chat with them. grounded ai answers with cited sources (rag powered by google gemini). tamadoo_document_ai productivity &amp; tools"><a href="../../modules/tamadoo_document_ai/"><img src="../../assets/tamadoo_document_ai/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Document AI (Chat with your files)</span><span class="card-sum">Upload PDF/DOCX/TXT and chat with them. Grounded AI answers with cited sources (RAG powered by Google Gemini).</span><span class="card-meta"><span class="price ">$49</span><span class="vers">Odoo 16–20</span></span></span></a></li></ul><p><a href="../../category/tools/">All Productivity &amp; Tools apps &rarr;</a></p></section></div>
+</main>
+<footer class="site-footer"><div class="wrap"><p><strong>Tamadoo</strong> &middot; Odoo add-ons made in Indonesia &middot; Odoo 16&ndash;20</p><p>Questions or a custom change? <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a></p><p class="fine">All modules are sold and downloaded on the official <a href="https://apps.odoo.com/apps/modules/browse?author=Tamadoo" rel="noopener">Odoo Apps Store</a>. Odoo is a trademark of Odoo S.A.; this site is not affiliated with Odoo S.A.</p></div></footer>
+</body>
+</html>

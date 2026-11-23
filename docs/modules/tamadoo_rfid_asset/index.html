@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFID Asset Tracking for Odoo 17–20 | Tamadoo</title>
+<meta name="description" content="Put RFID tags on your equipment, track where it is and who holds it, run location audits with a handheld reader and connect readers over a REST API.…">
+<link rel="canonical" href="https://tamadoo-odoo.github.io/modules/tamadoo_rfid_asset/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tamadoo Odoo Apps">
+<meta property="og:title" content="RFID Asset Tracking for Odoo 17–20 | Tamadoo">
+<meta property="og:description" content="Put RFID tags on your equipment, track where it is and who holds it, run location audits with a handheld reader and connect readers over a REST API.…">
+<meta property="og:url" content="https://tamadoo-odoo.github.io/modules/tamadoo_rfid_asset/">
+<meta property="og:image" content="https://tamadoo-odoo.github.io/assets/tamadoo_rfid_asset/banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#714b67">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "RFID Asset Tracking - Tags, Audits & Reader API", "description": "Put RFID tags on your equipment, track where it is and who holds it, run location audits with a handheld reader and connect readers over a REST API.", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Inventory & Manufacturing", "operatingSystem": "Odoo 17.0, 18.0, 19.0, 20.0", "softwareVersion": "20.0.1.0.1", "url": "https://tamadoo-odoo.github.io/modules/tamadoo_rfid_asset/", "image": "https://tamadoo-odoo.github.io/assets/tamadoo_rfid_asset/banner.jpg", "author": {"@type": "Organization", "name": "Tamadoo", "email": "tama.odoo@gmail.com"}, "offers": {"@type": "Offer", "price": "129.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://apps.odoo.com/apps/modules/19.0/tamadoo_rfid_asset"}}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar"><a class="brand" href="../../"><span class="logo" aria-hidden="true">T</span>Tamadoo <span class="brand-sub">Odoo Apps</span></a><nav aria-label="Categories"><details class="menu"><summary>Categories</summary><ul><li><a href="../../category/pos/">Point of Sale</a></li><li><a href="../../category/sales/">Sales, CRM &amp; Purchase</a></li><li><a href="../../category/inventory/">Inventory &amp; Manufacturing</a></li><li><a href="../../category/accounting/">Accounting &amp; Finance</a></li><li><a href="../../category/hr/">HR &amp; Payroll</a></li><li><a href="../../category/website/">Website &amp; eCommerce</a></li><li><a href="../../category/tools/">Productivity &amp; Tools</a></li></ul></details></nav></div></header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> &rsaquo; <a href="../../category/inventory/">Inventory &amp; Manufacturing</a> &rsaquo; <span>RFID Asset Tracking</span></nav><article class="module"><header class="module-head"><div class="module-intro"><h1>RFID Asset Tracking - Tags, Audits &amp; Reader API</h1><p class="lead">Put RFID tags on your equipment, track where it is and who holds it, run location audits with a handheld reader and connect readers over a REST API.</p><dl class="facts"><div><dt>Price</dt><dd class="price-big">$129</dd></div><div><dt>Odoo versions</dt><dd><ul class="chips"><li>17.0</li><li>18.0</li><li>19.0</li><li>20.0</li></ul></dd></div><div class="wide"><dt>Technical name</dt><dd><code>tamadoo_rfid_asset</code></dd></div><div><dt>License</dt><dd>OPL-1</dd></div></dl><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/19.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 19.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/18.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 18.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/17.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 17.0</small></a></div><p class="note">Odoo 20.0: not listed on the store yet. Ask at <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p></div><img class="banner" src="../../assets/tamadoo_rfid_asset/banner.jpg" alt="RFID Asset Tracking banner" width="560" height="280"></header><section class="desc" aria-label="Module description"><p class="note">Text and screenshots below are from the Odoo 20.0 version of this module.</p><div>
+
+  <div>
+    
+    
+    <p>
+      Put RFID tags on the equipment you manage in Odoo Maintenance, track its location and who holds it,
+      audit any room with a handheld reader and see at once what is missing, misplaced or unknown.
+    </p>
+    
+  </div>
+
+  <h2>Scan a room, get the answer</h2>
+  <div>
+    <div>
+      <img src="../../assets/tamadoo_rfid_asset/v20_5_audit_scanning.webp" alt="Scanning tags into an audit" width="1600" height="900" loading="lazy" decoding="async">
+      <div>1. Scan with the reader</div>
+    </div>
+    <div>
+      <img src="../../assets/tamadoo_rfid_asset/v20_6_audit_result.webp" alt="Audit result" width="1600" height="900" loading="lazy" decoding="async">
+      <div>2. Found / missing / misplaced / unknown</div>
+    </div>
+  </div>
+
+  <h2>What you get</h2>
+  <div>
+    <div>
+      <div>🏷️</div>
+      <h3>RFID on your equipment</h3>
+      <p>Built on Odoo Maintenance equipment: no second asset register. Tags normalised (no spaces, upper case) and unique per company.</p>
+    </div>
+    <div>
+      <div>📍</div>
+      <h3>Asset locations</h3>
+      <p>Tree of sites, floors and rooms with codes and GPS. Search equipment by location including sub-locations.</p>
+    </div>
+    <div>
+      <div>🔎</div>
+      <h3>Location audits</h3>
+      <p>Expected vs scanned: found, missing, misplaced and unknown tags, with progress and one-click relocation.</p>
+    </div>
+    <div>
+      <div>🔁</div>
+      <h3>Movements</h3>
+      <p>Location and custodian changes with a full history, from the form, the scan screen, an audit or a reader.</p>
+    </div>
+    <div>
+      <div>📡</div>
+      <h3>Reader REST API</h3>
+      <p>JSON API with a key per reader. A scan goes into the open audit assigned to that reader.</p>
+    </div>
+    <div>
+      <div>🖨️</div>
+      <h3>Labels</h3>
+      <p>QR + barcode asset labels to print on A4 sheets.</p>
+    </div>
+  </div>
+
+  <h2>Step by step</h2>
+  <h3>Your equipment, tagged</h3>
+  <p>Every equipment of Odoo Maintenance gets an RFID tag and an asset location. Filter untagged equipment, group by location.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_1_equipment_list.webp" alt="Your equipment, tagged" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>On the equipment</h3>
+  <p>Tag (EPC, unique per company), asset location, Move and Print Label buttons, and a Movements smart button.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_2_equipment_form.webp" alt="On the equipment" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Move in one step</h3>
+  <p>Pick a new location and/or employee: the equipment and its Maintenance assignment are updated and the move is logged.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_3_move_dialog.webp" alt="Move in one step" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Full history</h3>
+  <p>Every movement with origin, destination, reason and reader. Last scan time and reader are kept on the equipment.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_4_equipment_history.webp" alt="Full history" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Audit a location with a reader</h3>
+  <p>Start an audit, click Scan and pull the trigger: a USB / Bluetooth keyboard-wedge reader types each tag. Each one is identified straight away.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_5_audit_scanning-2.webp" alt="Audit a location with a reader" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Found, missing, misplaced, unknown</h3>
+  <p>Expected equipment is compared with what was scanned, by you and by readers through the API. Progress at a glance.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_6_audit_result-2.webp" alt="Found, missing, misplaced, unknown" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Fix the register in one click</h3>
+  <p>Relocate Misplaced Here moves every equipment found in the wrong place, with a correction movement linked to the audit.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_7_audit_relocated.webp" alt="Fix the register in one click" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Audit analysis</h3>
+  <p>Results per equipment category, filter missing equipment or unknown tags, export to Excel.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_8_audit_analysis.webp" alt="Audit analysis" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>All audits</h3>
+  <p>Missing and misplaced counts and progress per audit and location.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_9_audits.webp" alt="All audits" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Scan screen</h3>
+  <p>Scan any tags to see what they are, where they belong and who holds them, then open them or move them all at once.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_10_scan_lookup.webp" alt="Scan screen" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Asset locations</h3>
+  <p>Sites, floors and rooms in a tree, with short codes for readers and GPS coordinates.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_11_locations.webp" alt="Asset locations" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Readers with their own API key</h3>
+  <p>Each handheld or gate reader gets its own key, shown once and stored only as a fingerprint. Regenerate or revoke at any time.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_12_reader_key.webp" alt="Readers with their own API key" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>REST API for readers</h3>
+  <p>ping, look up a tag, send a batch of scans into an audit, move equipment to a location or an employee badge.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_13_reader.webp" alt="REST API for readers" width="1600" height="900" loading="lazy" decoding="async">
+  <h3>Asset labels</h3>
+  <p>QR code and barcode labels, three per row on A4, from the equipment list or form.</p>
+  <img src="../../assets/tamadoo_rfid_asset/v20_14_labels.webp" alt="Asset labels" width="1600" height="900" loading="lazy" decoding="async">
+
+  <h2>Reader API</h2>
+  <pre>GET  /tamadoo_rfid/v1/ping
+GET  /tamadoo_rfid/v1/equipment/&lt;tag&gt;
+POST /tamadoo_rfid/v1/scan   {"tags": ["E2801170...", ...], "audit": "AUD/2026/0002"}
+POST /tamadoo_rfid/v1/move   {"tags": [...], "location": "HQ-2F-MR", "employee": "BADGE42"}
+Header: Authorization: Bearer &lt;reader API key&gt;</pre>
+
+  <div>
+    <h2>Set up in 5 minutes</h2>
+    <ol>
+      <li><b>Maintenance → Configuration → Asset Locations</b>: create your sites, floors and rooms.</li>
+      <li>Scan or type the tag on each equipment (field <i>RFID Tag</i>) and set its location. Print labels if you need them.</li>
+      <li>Desktop / handheld in keyboard mode: <b>Maintenance → RFID → Scan Tags</b>. Readers with their own app:
+        <b>Configuration → RFID Readers → Generate API Key</b>.</li>
+      <li><b>RFID → Audits</b>: pick a location, Start Audit, scan.</li>
+    </ol>
+    <p>
+      Requirements: Odoo 20.0, depends on <b>hr_maintenance</b> (Maintenance + Employees, both in Community).
+      Works with any UHF / HF / NFC reader that types the tag as keyboard input, or that can send HTTP requests.
+      The QR code and barcode on the asset labels are drawn by reportlab and need its PNG backend: Odoo's Debian/Ubuntu packages include it, on a pip-based Linux install run <code>pip install rl-renderPM</code> (Odoo's requirements.txt lists it for Windows only), otherwise the label codes show as broken images.
+    </p>
+  </div>
+
+  <div>
+    Tamadoo · tamadoo.com · Support: tama.odoo@gmail.com
+  </div>
+</div></section><section class="cta"><h2>Get RFID Asset Tracking</h2><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/19.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 19.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/18.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 18.0</small></a><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/17.0/tamadoo_rfid_asset" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 17.0</small></a></div><p class="note">Odoo 20.0: not listed on the store yet. Ask at <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p><p>Questions before buying? Write to <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p></section></article><section class="related"><h2>More Inventory &amp; Manufacturing apps</h2><ul class="cards"><li class="card" data-cat="inventory" data-free="0" data-q="e-pod - electronic proof of delivery proof of delivery by qr code: receiver, received quantities, photos, signature and gps geofence check, straight on the delivery order. tamadoo_epod inventory &amp; manufacturing"><a href="../../modules/tamadoo_epod/"><img src="../../assets/tamadoo_epod/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">e-POD - Electronic Proof of Delivery</span><span class="card-sum">Proof of delivery by QR code: receiver, received quantities, photos, signature and GPS geofence check, straight on the delivery order.</span><span class="card-meta"><span class="price ">$129</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="mrp factory overhead - absorb overhead into finished goods cost add factory overhead (a % of component cost or a fixed amount per unit) to the cost of manufactured products, posted dr inventory / cr overhead absorbed, and shown in the bom and mo overviews. tamadoo_mrp_factory_overhead inventory &amp; manufacturing"><a href="../../modules/tamadoo_mrp_factory_overhead/"><img src="../../assets/tamadoo_mrp_factory_overhead/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">MRP Factory Overhead - Absorb Overhead into Finished Goods Cost</span><span class="card-sum">Add factory overhead (a % of component cost or a fixed amount per unit) to the cost of manufactured products, posted Dr Inventory / Cr Overhead Absorbed, and shown in the BOM and MO overviews.</span><span class="card-meta"><span class="price ">$39</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="real-time stock journal entries post a perpetual inventory journal entry at every receipt, delivery, return and inter-warehouse transfer, with per-category stock input/output and per-warehouse inventory accounts, like odoo 18. tamadoo_stock_realtime_je inventory &amp; manufacturing"><a href="../../modules/tamadoo_stock_realtime_je/"><img src="../../assets/tamadoo_stock_realtime_je/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Real-time Stock Journal Entries</span><span class="card-sum">Post a perpetual inventory journal entry at every receipt, delivery, return and inter-warehouse transfer, with per-category Stock Input/Output and per-warehouse inventory accounts, like Odoo 18.</span><span class="card-meta"><span class="price ">$49</span><span class="vers">Odoo 19, 20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="stock card - product movements with opening and running balance the classic stock card (kartu stok) per product and location: opening balance, every receipt, delivery and transfer with its running balance, and the closing balance, on screen and in pdf. tamadoo_stock_card inventory &amp; manufacturing"><a href="../../modules/tamadoo_stock_card/"><img src="../../assets/tamadoo_stock_card/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Stock Card - Product Movements with Opening and Running Balance</span><span class="card-sum">The classic stock card (kartu stok) per product and location: opening balance, every receipt, delivery and transfer with its running balance, and the closing balance, on screen and in PDF.</span><span class="card-meta"><span class="price ">$19</span><span class="vers">Odoo 16–20</span></span></span></a></li></ul><p><a href="../../category/inventory/">All Inventory &amp; Manufacturing apps &rarr;</a></p></section></div>
+</main>
+<footer class="site-footer"><div class="wrap"><p><strong>Tamadoo</strong> &middot; Odoo add-ons made in Indonesia &middot; Odoo 16&ndash;20</p><p>Questions or a custom change? <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a></p><p class="fine">All modules are sold and downloaded on the official <a href="https://apps.odoo.com/apps/modules/browse?author=Tamadoo" rel="noopener">Odoo Apps Store</a>. Odoo is a trademark of Odoo S.A.; this site is not affiliated with Odoo S.A.</p></div></footer>
+</body>
+</html>
