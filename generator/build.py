@@ -715,6 +715,9 @@ def main():
     with open(os.path.join(out, "assets", "favicon.svg"), "w") as f:
         f.write(FAVICON)
     open(os.path.join(out, ".nojekyll"), "w").close()
+    root_files = os.path.join(HERE, "root_files")
+    for name in sorted(os.listdir(root_files)) if os.path.isdir(root_files) else []:
+        shutil.copy(os.path.join(root_files, name), os.path.join(out, name))
 
     videos_path = os.path.join(HERE, "videos.json")
     videos = json.load(open(videos_path)) if os.path.exists(videos_path) else {}
