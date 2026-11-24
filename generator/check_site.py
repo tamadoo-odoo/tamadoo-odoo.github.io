@@ -34,7 +34,7 @@ class Page(HTMLParser):
             self.titles += 1
         if tag == "meta" and a.get("name") == "description":
             self.desc = a.get("content")
-        for k in ("href", "src"):
+        for k in ("href", "src", "poster"):
             if a.get(k) and not (tag == "link" and a.get("rel") == "canonical") and tag != "meta":
                 self.refs.append((tag, a[k]))
         if tag == "img" and "alt" not in a:

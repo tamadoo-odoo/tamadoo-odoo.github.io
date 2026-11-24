@@ -1,1 +1,62 @@
-{}
+{
+  "tamadoo_approval_engine": {
+    "file": "tamadoo_approval_engine.mp4",
+    "poster": "tamadoo_approval_engine.jpg",
+    "seconds": 42.7,
+    "date": "2026-11-24"
+  },
+  "tamadoo_bank_statement_import_id": {
+    "file": "tamadoo_bank_statement_import_id.mp4",
+    "poster": "tamadoo_bank_statement_import_id.jpg",
+    "seconds": 52.8,
+    "date": "2026-11-24"
+  },
+  "tamadoo_knowledge_docs": {
+    "file": "tamadoo_knowledge_docs.mp4",
+    "poster": "tamadoo_knowledge_docs.jpg",
+    "seconds": 35.8,
+    "date": "2026-11-24"
+  },
+  "tamadoo_pos_commission": {
+    "file": "tamadoo_pos_commission.mp4",
+    "poster": "tamadoo_pos_commission.jpg",
+    "seconds": 54.6,
+    "date": "2026-11-24"
+  },
+  "tamadoo_pos_happy_hour": {
+    "file": "tamadoo_pos_happy_hour.mp4",
+    "poster": "tamadoo_pos_happy_hour.jpg",
+    "seconds": 53.5,
+    "date": "2026-11-24"
+  },
+  "tamadoo_pos_quotation": {
+    "file": "tamadoo_pos_quotation.mp4",
+    "poster": "tamadoo_pos_quotation.jpg",
+    "seconds": 38.0,
+    "date": "2026-11-24"
+  },
+  "tamadoo_sales_commission": {
+    "file": "tamadoo_sales_commission.mp4",
+    "poster": "tamadoo_sales_commission.jpg",
+    "seconds": 53.0,
+    "date": "2026-11-24"
+  },
+  "tamadoo_sales_discount_approval": {
+    "file": "tamadoo_sales_discount_approval.mp4",
+    "poster": "tamadoo_sales_discount_approval.jpg",
+    "seconds": 44.6,
+    "date": "2026-11-24"
+  },
+  "tamadoo_sales_target": {
+    "file": "tamadoo_sales_target.mp4",
+    "poster": "tamadoo_sales_target.jpg",
+    "seconds": 42.7,
+    "date": "2026-11-24"
+  },
+  "tamadoo_stock_card": {
+    "file": "tamadoo_stock_card.mp4",
+    "poster": "tamadoo_stock_card.jpg",
+    "seconds": 43.0,
+    "date": "2026-11-24"
+  }
+}

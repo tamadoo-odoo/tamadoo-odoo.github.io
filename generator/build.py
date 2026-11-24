@@ -502,6 +502,17 @@ def jsonld_app(ctx, mod):
             "url": STORE_URL.format(series=(mod["listed"] or mod["series"])[0], module=mod["module"]),
         },
     }
+    video = ctx["videos"].get(mod["module"])
+    if isinstance(video, dict):
+        data["video"] = {
+            "@type": "VideoObject",
+            "name": "%s demo" % mod["name"],
+            "description": mod["summary"],
+            "thumbnailUrl": ctx["site_url"] + "videos/" + video["poster"],
+            "contentUrl": ctx["site_url"] + "videos/" + video["file"],
+            "uploadDate": video["date"],
+            "duration": "PT%dS" % round(video["seconds"]),
+        }
     return data
 
 
@@ -529,7 +540,14 @@ def build_module_page(ctx, mod, images, repo):
 
     video = ctx["videos"].get(m) or mod["manifest"].get("youtube_id") or ""
     video_html = ""
-    if re.match(r"^[A-Za-z0-9_-]{6,20}$", video or ""):
+    if isinstance(video, dict):
+        video_html = (
+            '<section class="video"><h2>Video</h2><div class="video-frame">'
+            '<video controls preload="none" playsinline width="1280" height="720" poster="../../videos/%s" '
+            'aria-label="%s demo video"><source src="../../videos/%s" type="video/mp4"></video></div>'
+            '<p class="note">Screen recording in Odoo 20.0 with demo data, no sound.</p></section>'
+            % (esc(video["poster"]), esc(mod["name"]), esc(video["file"])))
+    elif re.match(r"^[A-Za-z0-9_-]{6,20}$", video or ""):
         video_html = (
             '<section class="video"><h2>Video</h2><div class="video-frame">'
             '<iframe src="https://www.youtube-nocookie.com/embed/%s" title="%s video" loading="lazy" '
@@ -721,6 +739,15 @@ def main():
 
     videos_path = os.path.join(HERE, "videos.json")
     videos = json.load(open(videos_path)) if os.path.exists(videos_path) else {}
+    video_dir = os.path.join(HERE, "videos")
+    for key, video in list(videos.items()):
+        if isinstance(video, dict):
+            missing = [f for f in (video["file"], video["poster"]) if not os.path.isfile(os.path.join(video_dir, f))]
+            if missing:
+                print("video files missing for %s: %s" % (key, ", ".join(missing)))
+                del videos[key]
+    if any(isinstance(v, dict) for v in videos.values()):
+        shutil.copytree(video_dir, os.path.join(out, "videos"))
     images = ImageStore(repo, out)
     raw = collect(repo, status)
     mods = []
