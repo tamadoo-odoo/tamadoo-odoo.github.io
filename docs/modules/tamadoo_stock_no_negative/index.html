@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prevent Negative Stock for Odoo 20 | Tamadoo</title>
+<meta name="description" content="Prevent negative stock: refuse to validate a delivery, transfer, manufacturing order or inventory change that would leave a product below zero. Allow…">
+<link rel="canonical" href="https://tamadoo-odoo.github.io/modules/tamadoo_stock_no_negative/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tamadoo Odoo Apps">
+<meta property="og:title" content="Prevent Negative Stock for Odoo 20 | Tamadoo">
+<meta property="og:description" content="Prevent negative stock: refuse to validate a delivery, transfer, manufacturing order or inventory change that would leave a product below zero. Allow…">
+<meta property="og:url" content="https://tamadoo-odoo.github.io/modules/tamadoo_stock_no_negative/">
+<meta property="og:image" content="https://tamadoo-odoo.github.io/assets/tamadoo_stock_no_negative/banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#714b67">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Prevent Negative Stock - Block Validation Below Zero", "description": "Prevent negative stock: refuse to validate a delivery, transfer, manufacturing order or inventory change that would leave a product below zero. Allow exceptions per category, product or location.", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Inventory & Manufacturing", "operatingSystem": "Odoo 20.0", "softwareVersion": "20.0.1.0.0", "url": "https://tamadoo-odoo.github.io/modules/tamadoo_stock_no_negative/", "image": "https://tamadoo-odoo.github.io/assets/tamadoo_stock_no_negative/banner.jpg", "author": {"@type": "Organization", "name": "Tamadoo", "email": "tama.odoo@gmail.com"}, "offers": {"@type": "Offer", "price": "0.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://apps.odoo.com/apps/modules/20.0/tamadoo_stock_no_negative"}}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar"><a class="brand" href="../../"><span class="logo" aria-hidden="true">T</span>Tamadoo <span class="brand-sub">Odoo Apps</span></a><nav aria-label="Categories"><details class="menu"><summary>Categories</summary><ul><li><a href="../../category/pos/">Point of Sale</a></li><li><a href="../../category/sales/">Sales, CRM &amp; Purchase</a></li><li><a href="../../category/inventory/">Inventory &amp; Manufacturing</a></li><li><a href="../../category/accounting/">Accounting &amp; Finance</a></li><li><a href="../../category/hr/">HR &amp; Payroll</a></li><li><a href="../../category/website/">Website &amp; eCommerce</a></li><li><a href="../../category/tools/">Productivity &amp; Tools</a></li></ul></details></nav></div></header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Home</a> &rsaquo; <a href="../../category/inventory/">Inventory &amp; Manufacturing</a> &rsaquo; <span>Prevent Negative Stock</span></nav><article class="module"><header class="module-head"><div class="module-intro"><h1>Prevent Negative Stock - Block Validation Below Zero</h1><p class="lead">Prevent negative stock: refuse to validate a delivery, transfer, manufacturing order or inventory change that would leave a product below zero. Allow exceptions per category, product or location.</p><dl class="facts"><div><dt>Price</dt><dd class="price-big">Free</dd></div><div><dt>Odoo versions</dt><dd><ul class="chips"><li>20.0</li></ul></dd></div><div class="wide"><dt>Technical name</dt><dd><code>tamadoo_stock_no_negative</code></dd></div><div><dt>License</dt><dd>LGPL-3</dd></div></dl><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/20.0/tamadoo_stock_no_negative" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 20.0</small></a></div></div><img class="banner" src="../../assets/tamadoo_stock_no_negative/banner.jpg" alt="Prevent Negative Stock banner" width="560" height="280"></header><section class="desc" aria-label="Module description"><p class="note">Text and screenshots below are from the Odoo 20.0 version of this module.</p><div>
+  <div>
+    
+    <p>
+      Odoo refuses any stock operation that would leave a product below zero. Exceptions with one checkbox.
+    </p>
+    
+  </div>
+
+  <div>
+    <h2>What it does</h2>
+    <p>
+      In standard Odoo you can validate a delivery for 5 units when only 2 are on hand: the on-hand
+      quantity simply becomes -3. This module stops that. The validation is refused with a message that
+      names each product, lot and location that would go negative, and nothing is changed.
+    </p>
+    <ul>
+      <li><strong>Every stock operation</strong>: deliveries, internal transfers, manufacturing consumption, scrap and inventory adjustments.</li>
+      <li><strong>Per lot / serial number</strong>: a lot that is not in the location cannot be delivered.</li>
+      <li><strong>Exceptions</strong>: tick <em>Allow Negative Stock</em> on a product category, a product or a location.</li>
+      <li>Only <strong>tracked (storable) products</strong> in internal and transit locations are checked. Services and untracked goods are never blocked.</li>
+      <li><strong>Point of Sale orders are never blocked</strong>: the customer has already paid, so the sale goes through.</li>
+      <li>Works for every user: inventory users get the same clear message, no access error.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>How to use</h2>
+    <h3>1. Install the module</h3>
+    <p>Nothing to configure: from now on every storable product is protected in every warehouse.</p>
+    <h3>2. Validate a transfer without enough stock</h3>
+    <p>Odoo refuses the validation and shows what is missing. Receive or count the missing quantity, then validate again.</p>
+    <img src="../../assets/tamadoo_stock_no_negative/2_validation_refused.webp" alt="Validation refused" width="1280" height="760" loading="lazy" decoding="async">
+    <h3>3. Allow negative stock for a product category (optional)</h3>
+    <p><em>Inventory › Configuration › Product Categories</em>, tab <em>Logistics</em>: tick <em>Allow Negative Stock</em>. Products of that category can go below zero again.</p>
+    <img src="../../assets/tamadoo_stock_no_negative/1_category_setting.webp" alt="Category setting" width="1280" height="760" loading="lazy" decoding="async">
+    <h3>4. Or for one product</h3>
+    <p>On the product, tab <em>Inventory</em>, section <em>Logistics</em>.</p>
+    <img src="../../assets/tamadoo_stock_no_negative/4_product_setting.webp" alt="Product setting" width="1280" height="760" loading="lazy" decoding="async">
+    <h3>5. Or for one location</h3>
+    <p><em>Inventory › Configuration › Locations</em> (needs <em>Storage Locations</em> in the settings): any product may go negative in a location with the box ticked.</p>
+    <img src="../../assets/tamadoo_stock_no_negative/3_location_setting.webp" alt="Location setting" width="1280" height="760" loading="lazy" decoding="async">
+  </div>
+
+  <div>
+    <h2>Requirements</h2>
+    <ul>
+      <li>Odoo 20 Community or Enterprise — Inventory (<code>stock</code>).</li>
+      <li>Quantities that are already negative before you install stay as they are: receive or count them to bring them back to zero.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2>Related apps</h2>
+    <ul>
+      <li><a href="https://apps.odoo.com/apps/modules/20.0/tamadoo_stock_card" rel="nofollow noopener"><strong>Stock Card Report - Kardex with Running Balance</strong></a>: every move in and out per product and location, with the running balance.</li>
+      <li><a href="https://apps.odoo.com/apps/modules/20.0/tamadoo_pos_stock_warning" rel="nofollow noopener"><strong>POS Stock Warning - POS Low Stock and Zero Stock Alert</strong></a>: warn the cashier before selling what is not on the shelf.</li>
+      <li><a href="https://apps.odoo.com/apps/modules/20.0/tamadoo_pos_product_availability" rel="nofollow noopener"><strong>POS Product Stock - Show Stock Quantity on Product Cards</strong></a>: the on-hand quantity on each product in the Point of Sale.</li>
+    </ul>
+  </div>
+
+  <div>
+    <p>Tamadoo · tama.odoo@gmail.com</p>
+  </div>
+</div></section><section class="cta"><h2>Get Prevent Negative Stock</h2><div class="store-buttons"><a class="btn btn-store" href="https://apps.odoo.com/apps/modules/20.0/tamadoo_stock_no_negative" rel="noopener"><span>Get it on the Odoo Apps Store</span><small>Odoo 20.0</small></a></div><p>Questions before buying? Write to <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a>.</p></section></article><section class="related"><h2>More Inventory &amp; Manufacturing apps</h2><ul class="cards"><li class="card" data-cat="inventory" data-free="0" data-q="manufacturing overhead - factory overhead cost in mrp manufacturing overhead absorbed into the cost of finished goods: a % of component cost or a fixed amount per unit per bom, posted to the overhead account. tamadoo_mrp_factory_overhead inventory &amp; manufacturing"><a href="../../modules/tamadoo_mrp_factory_overhead/"><img src="../../assets/tamadoo_mrp_factory_overhead/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Manufacturing Overhead - Factory Overhead Cost in MRP</span><span class="card-sum">Manufacturing overhead absorbed into the cost of finished goods: a % of component cost or a fixed amount per unit per BOM, posted to the overhead account.</span><span class="card-meta"><span class="price ">$39</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="proof of delivery - delivery signature, photo, gps by qr electronic proof of delivery and delivery confirmation by qr code: receiver, quantities, photos, signature and gps geofence check on the delivery order. tamadoo_epod inventory &amp; manufacturing"><a href="../../modules/tamadoo_epod/"><img src="../../assets/tamadoo_epod/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Proof of Delivery - Delivery Signature, Photo, GPS by QR</span><span class="card-sum">Electronic proof of delivery and delivery confirmation by QR code: receiver, quantities, photos, signature and GPS geofence check on the delivery order.</span><span class="card-meta"><span class="price ">$129</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="rfid asset tracking - tags, audits and reader api rfid asset tracking on maintenance equipment: tag assets, track location and holder, audit rooms with a handheld reader, connect readers over a rest api. tamadoo_rfid_asset inventory &amp; manufacturing"><a href="../../modules/tamadoo_rfid_asset/"><img src="../../assets/tamadoo_rfid_asset/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">RFID Asset Tracking - Tags, Audits and Reader API</span><span class="card-sum">RFID asset tracking on maintenance equipment: tag assets, track location and holder, audit rooms with a handheld reader, connect readers over a REST API.</span><span class="card-meta"><span class="price ">$129</span><span class="vers">Odoo 17–20</span></span></span></a></li><li class="card" data-cat="inventory" data-free="0" data-q="stock card report - kardex with running balance stock card, kardex and stock ledger per product and location: opening balance, every move with its running balance, closing balance, on screen and in pdf. tamadoo_stock_card inventory &amp; manufacturing"><a href="../../modules/tamadoo_stock_card/"><img src="../../assets/tamadoo_stock_card/banner.jpg" alt="" width="560" height="280" loading="lazy" decoding="async"><span class="card-body"><span class="card-title">Stock Card Report - Kardex with Running Balance</span><span class="card-sum">Stock card, kardex and stock ledger per product and location: opening balance, every move with its running balance, closing balance, on screen and in PDF.</span><span class="card-meta"><span class="price ">$19</span><span class="vers">Odoo 16–20</span></span></span></a></li></ul><p><a href="../../category/inventory/">All Inventory &amp; Manufacturing apps &rarr;</a></p></section></div>
+</main>
+<footer class="site-footer"><div class="wrap"><p><strong>Tamadoo</strong> &middot; Odoo add-ons made in Indonesia &middot; Odoo 16&ndash;20</p><p>Questions or a custom change? <a href="mailto:tama.odoo@gmail.com">tama.odoo@gmail.com</a></p><p class="fine">All modules are sold and downloaded on the official <a href="https://apps.odoo.com/apps/modules/browse?author=Tamadoo" rel="noopener">Odoo Apps Store</a>. Odoo is a trademark of Odoo S.A.; this site is not affiliated with Odoo S.A.</p></div></footer>
+</body>
+</html>
