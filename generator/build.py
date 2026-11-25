@@ -435,9 +435,9 @@ def page(ctx, rel_path, title, description, body, og_image=None, jsonld=None, ex
     header = (
         '<body>\n<a class="skip" href="#main">Skip to content</a>\n'
         '<header class="site-header"><div class="wrap bar">'
-        '<a class="brand" href="%s"><span class="logo" aria-hidden="true">T</span>Tamadoo <span class="brand-sub">Odoo Apps</span></a>'
+        '<a class="brand" href="%s"><img class="logo" src="%sassets/favicon.svg" width="32" height="32" alt="">Tamadoo <span class="brand-sub">Odoo Apps</span></a>'
         '<nav aria-label="Categories"><details class="menu"><summary>Categories</summary><ul>%s</ul></details></nav>'
-        '</div></header>\n<main id="main">\n' % (root, nav)
+        '</div></header>\n<main id="main">\n' % (root, root, nav)
     )
     footer = (
         '\n</main>\n<footer class="site-footer"><div class="wrap">'
@@ -712,9 +712,7 @@ def build_404(ctx):
     return html_text.replace('<link rel="canonical" href="%s404.html">\n' % ctx["site_url"], "")
 
 
-FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" '
-           'fill="#714b67"/><text x="32" y="45" font-family="Arial,Helvetica,sans-serif" font-size="38" '
-           'font-weight="700" text-anchor="middle" fill="#fff">T</text></svg>\n')
+FAVICON = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "brand", "logo.svg")).read() + "\n"
 
 
 def main():
