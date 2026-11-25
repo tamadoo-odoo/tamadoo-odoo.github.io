@@ -20,6 +20,7 @@ from html.parser import HTMLParser
 
 SITE_URL = "https://tamadoo-odoo.github.io/"
 SUPPORT_EMAIL = "tama.odoo@gmail.com"
+YOUTUBE_URL = "https://www.youtube.com/@tamadoo-odoo"
 STORE_URL = "https://apps.odoo.com/apps/modules/{series}/{module}"
 VENDOR_URL = "https://apps.odoo.com/apps/modules/browse?author=Tamadoo"
 SERIES = ["20.0", "19.0", "18.0", "17.0", "16.0"]
@@ -441,11 +442,12 @@ def page(ctx, rel_path, title, description, body, og_image=None, jsonld=None, ex
     footer = (
         '\n</main>\n<footer class="site-footer"><div class="wrap">'
         '<p><strong>Tamadoo</strong> &middot; Odoo add-ons made in Indonesia &middot; Odoo 16&ndash;20</p>'
-        '<p>Questions or a custom change? <a href="mailto:%s">%s</a></p>'
+        '<p>Questions or a custom change? <a href="mailto:%s">%s</a> &middot; '
+        'Demo videos: <a href="%s" rel="noopener">YouTube</a></p>'
         '<p class="fine">All modules are sold and downloaded on the official '
         '<a href="%s" rel="noopener">Odoo Apps Store</a>. Odoo is a trademark of Odoo S.A.; '
         'this site is not affiliated with Odoo S.A.</p>'
-        '</div></footer>\n</body>\n</html>\n' % (SUPPORT_EMAIL, SUPPORT_EMAIL, VENDOR_URL)
+        '</div></footer>\n</body>\n</html>\n' % (SUPPORT_EMAIL, SUPPORT_EMAIL, YOUTUBE_URL, VENDOR_URL)
     )
     return "\n".join(head) + "\n" + header + body + footer
 
@@ -513,6 +515,8 @@ def jsonld_app(ctx, mod):
             "uploadDate": video["date"],
             "duration": "PT%dS" % round(video["seconds"]),
         }
+        if video.get("youtube"):
+            data["video"]["url"] = video["youtube"]
     return data
 
 
@@ -533,7 +537,10 @@ def build_module_page(ctx, mod, images, repo):
 
     cleaner = DescriptionCleaner(resolve)
     idx_sha = tree.get(desc_dir + "index.html")
-    body_html = cleaner.clean(repo.blob(idx_sha).decode("utf-8", "replace")) if idx_sha else ""
+    raw_desc = repo.blob(idx_sha).decode("utf-8", "replace") if idx_sha else ""
+    raw_desc = re.sub(r'<div[^>]*>\s*<a href="https://tamadoo-odoo\.github\.io/modules/[^"]*"[^>]*>.*?</a>\s*<div[^>]*>[^<]*</div>\s*</div>',
+                      "", raw_desc, flags=re.S)
+    body_html = cleaner.clean(raw_desc) if idx_sha else ""
     mod["dropped_images"] = cleaner.dropped_images
     shots = body_html.count("<img ")
     mod["shots"] = shots
@@ -545,8 +552,9 @@ def build_module_page(ctx, mod, images, repo):
             '<section class="video"><h2>Video</h2><div class="video-frame">'
             '<video controls preload="none" playsinline width="1280" height="720" poster="../../videos/%s" '
             'aria-label="%s demo video"><source src="../../videos/%s" type="video/mp4"></video></div>'
-            '<p class="note">Screen recording in Odoo 20.0 with demo data, no sound.</p></section>'
-            % (esc(video["poster"]), esc(mod["name"]), esc(video["file"])))
+            '<p class="note">Screen recording in Odoo 20.0 with demo data, no sound.%s</p></section>'
+            % (esc(video["poster"]), esc(mod["name"]), esc(video["file"]),
+               (' Also on <a href="%s" rel="noopener">YouTube</a>.' % esc(video["youtube"])) if video.get("youtube") else ""))
     elif re.match(r"^[A-Za-z0-9_-]{6,20}$", video or ""):
         video_html = (
             '<section class="video"><h2>Video</h2><div class="video-frame">'
